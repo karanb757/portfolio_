@@ -1,10 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-body {
-  background:#121315;
+::-webkit-scrollbar {
+  display: none;
 }
 
-*{
-  
+html {
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-y: scroll;
+  background:black;
 }

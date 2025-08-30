@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 
 const DURATION = 0.25
@@ -11,33 +11,28 @@ interface FlipLinkProps {
 
 const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
   return (
-    <motion.a
+    <motion.span
       initial="initial"
       whileHover="hovered"
-      target="_blank"
-      href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-semibold uppercase dark:text-white/90 sm:text-7xl md:text-6xl "
+      className="relative block overflow-hidden whitespace-nowrap text-4xl text-[#D9D9D9] font-semibold uppercase sm:text-7xl md:text-6xl"
       style={{
         lineHeight: 0.75,
+        cursor: "default", // optional, to indicate non-clickable
       }}
     >
       <div>
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
-              initial: {
-                y: 0,
-              },
-              hovered: {
-                y: "-100%",
-              },
+              initial: { y: 0 },
+              hovered: { y: "-100%" },
             }}
             transition={{
               duration: DURATION,
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block"
+            className="inline-block "
             key={i}
           >
             {l}
@@ -48,12 +43,8 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
-              initial: {
-                y: "100%",
-              },
-              hovered: {
-                y: 0,
-              },
+              initial: { y: "100%" },
+              hovered: { y: 0 },
             }}
             transition={{
               duration: DURATION,
@@ -67,8 +58,9 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
           </motion.span>
         ))}
       </div>
-    </motion.a>
+    </motion.span>
   )
 }
 
 export default FlipLink
+

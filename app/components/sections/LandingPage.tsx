@@ -1,15 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import HomePage from "./HomePage";
+import HomePage from "./Hero";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 
 
 const LandingPage = ({
   greetings = [
-    "Hallå", // Swedish
-    "Bonjour", // French
-    "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ", // Punjabi
-    "Hola", // Spanish
-    "Olá", // Portuguese
-    "नमस्ते", // Hindi
+    "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ", 
+    "Bonjour", 
+    "ನಮಸ್ಕಾರ", 
+    "ہیلو",
+    "Olá",
+    "নমস্কাৰ",  
+    "नमस्ते", 
   ],
   intervalDuration = 500,
   finalContent = <HomePage />,
@@ -17,9 +19,9 @@ const LandingPage = ({
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isAnimating, setIsAnimating] = useState(true);
   const [showFinalContent, setShowFinalContent] = useState(false);
+  const [showLottie, setShowLottie] = useState(false); // New state for animation
 
   useEffect(() => {
-    // Start with the first greeting immediately
     if (currentIndex === -1) {
       setCurrentIndex(0);
       return;
@@ -32,21 +34,27 @@ const LandingPage = ({
 
       return () => clearTimeout(timer);
     } else {
-      // Animation complete, show final content
-      const finalTimer = setTimeout(() => {
-        setIsAnimating(false);
-        setTimeout(() => {
-          setShowFinalContent(true);
-        }, 800);
+      // Last greeting finished, show lottie first
+      const lottieTimer = setTimeout(() => {
+        setShowLottie(true);
+
+        // After lottie duration, slide up and show final content
+        const finalTimer = setTimeout(() => {
+          setIsAnimating(false);
+          setTimeout(() => {
+            setShowFinalContent(true);
+          }, 800);
+        }, 3000); // 3 seconds for lottie
+
+        return () => clearTimeout(finalTimer);
       }, 500);
 
-      return () => clearTimeout(finalTimer);
+      return () => clearTimeout(lottieTimer);
     }
   }, [currentIndex, greetings.length, intervalDuration]);
 
   return (
-    <div className="relative">
-      {/* Home page (always rendered behind) */}
+    <div className={`relative`}>
       <div>{finalContent}</div>
 
       {/* Animated overlay */}
@@ -64,16 +72,25 @@ const LandingPage = ({
             isAnimating ? "opacity-100" : "opacity-0"
           }`}
         >
-          {currentIndex >= 0 && currentIndex < greetings.length && (
+          {/* Show greeting if lottie not playing */}
+          {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
-              className="text-5xl md:text-6xl lg:text-7xl font-light text-white animate-text-cycle"
+              className="text-6xl font-light md:text-6xl lg:text-5xl animate-text-cycle text-white"
             >
               {greetings[currentIndex]}
             </div>
           )}
+
+          {/* Show lottie animation */}
+          {showLottie && (
+            <div>
+              <DotLottieReact src="/Welcome.lottie" loop autoplay />
+            </div>
+          )}
         </div>
       </div>
+
       <style jsx>{`
         @keyframes text-cycle {
           0% {

@@ -1,14 +1,17 @@
-import HomePage from "./components/sections/HomePage";
+import ImageCursorTrailSection from "./components/sections/ImageCursorTrailSection";
+import Hero from "./components/sections/Hero";
 import LandingPage from "./components/sections/LandingPage";
-import Portfolio from "./components/Portfolio/Portfolio";
+import StickyScrollSections from "./components/sections/StickyScrollSections";
 
 export default function Page() {
   return (
     <>
       <LandingPage
-      finalContent={<HomePage />}
+      finalContent={<Hero/>}
       />
-      <Portfolio/>
+      <StickyScrollSections />
+      <ImageCursorTrailSection />
+      
     </>
   );
 }
