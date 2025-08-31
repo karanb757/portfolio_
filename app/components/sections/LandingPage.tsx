@@ -1,17 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import HomePage from "./Hero";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const LandingPage = ({
   greetings = [
-    "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ", 
-    "Bonjour", 
-    "ನಮಸ್ಕಾರ", 
+    "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ",
+    "Bonjour",
+    "ನಮಸ್ಕಾರ",
     "ہیلو",
     "Olá",
-    "নমস্কাৰ",  
-    "नमस्ते", 
+    "নমস্কাৰ",
+    "नमस्ते",
   ],
   intervalDuration = 500,
   finalContent = <HomePage />,
@@ -19,7 +19,7 @@ const LandingPage = ({
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isAnimating, setIsAnimating] = useState(true);
   const [showFinalContent, setShowFinalContent] = useState(false);
-  const [showLottie, setShowLottie] = useState(false); // New state for animation
+  const [showLottie, setShowLottie] = useState(false);
 
   useEffect(() => {
     if (currentIndex === -1) {
@@ -76,15 +76,21 @@ const LandingPage = ({
           {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-light animate-text-cycle text-white">
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-light animate-text-cycle text-white"
+            >
               {greetings[currentIndex]}
             </div>
           )}
 
-          {/* Show lottie animation */}
+          {/* Show lottie animation with consistent sizing */}
           {showLottie && (
-            <div>
-              <DotLottieReact src="/Welcome.lottie" loop autoplay />
+            <div className="lottie-container">
+              <DotLottieReact 
+                src="/Welcome.lottie" 
+                loop 
+                autoplay
+                className="lottie-animation"
+              />
             </div>
           )}
         </div>
@@ -112,6 +118,35 @@ const LandingPage = ({
 
         .animate-text-cycle {
           animation: text-cycle 1s ease-in-out;
+        }
+
+        .lottie-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .lottie-animation {
+          width: 200px;
+          height: 200px;
+        }
+
+        /* Tablet screens and up */
+        @media (min-width: 768px) {
+          .lottie-animation {
+            width: 400px;
+            height: 400px;
+          }
+        }
+
+        /* Large screens */
+        @media (min-width: 1024px) {
+          .lottie-animation {
+            width: 900px;
+            height: 900px;
+          }
         }
       `}</style>
     </div>
