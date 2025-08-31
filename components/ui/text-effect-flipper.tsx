@@ -14,7 +14,7 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
     <motion.span
       initial="initial"
       whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl text-[#D9D9D9] font-semibold uppercase sm:text-7xl md:text-6xl"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl text-white font-semibold uppercase sm:text-7xl md:text-6xl"
       style={{
         lineHeight: 0.75,
         cursor: "default", // optional, to indicate non-clickable

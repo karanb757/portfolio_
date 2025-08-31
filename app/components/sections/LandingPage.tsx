@@ -76,8 +76,7 @@ const LandingPage = ({
           {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
-              className="text-6xl font-light md:text-6xl lg:text-5xl animate-text-cycle text-white"
-            >
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-light animate-text-cycle text-white">
               {greetings[currentIndex]}
             </div>
           )}

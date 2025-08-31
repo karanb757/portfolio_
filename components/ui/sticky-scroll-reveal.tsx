@@ -1,22 +1,24 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+
+interface ContentItem {
+  title: string;
+  description: string;
+  content?: React.ReactNode;
+}
 
 export const StickyScroll = ({
   content,
   contentClassName,
 }: {
-  content: {
-    title: string;
-    description: string;
-    content?: React.ReactNode | any;
-  }[];
+  content: ContentItem[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start center", "end center"],
@@ -47,13 +49,14 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex justify-center space-x-10 rounded-md p-10 "
+      className="relative flex flex-col lg:flex-row justify-center rounded-md"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4 ">
-        <div className="max-w-2xl">
+      {/* Content Section */}
+      <div className="relative flex items-start pr-0 sm:px-4 w-full lg:w-1/2">
+        <div className="max-w-full lg:max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-[10vh]">
+            <div key={item.title + index} className="my-0">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -61,7 +64,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-slate-100"
               >
                 {item.title}
               </motion.h2>
@@ -72,18 +75,19 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-[#494949]"
+                className="text-md sm:text-base md:text-lg lg:text-base mt-4 sm:mt-6 md:mt-8 lg:mt-10 max-w-full sm:max-w-lg md:max-w-xl lg:max-w-sm text-[#494949] leading-relaxed pb-2 mb-12"
               >
                 {item.description}
               </motion.p>
             </div>
           ))}
-          <div className="h-[50vh]" />
         </div>
       </div>
+
+      {/* Sticky Image/Content Section */}
       <div
         className={cn(
-          "sticky top-1/2 -translate-y-1/2 hidden h-[60vh] w-[350px] overflow-hidden rounded-md lg:block",
+          "flex items-center justify-center hidden lg:block sticky top-1/2 -translate-y-1/2 h-[22vh] w-[250px] overflow-hidden rounded-md mt-8 lg:mt-0",
           contentClassName,
         )}
       >
@@ -92,5 +96,3 @@ export const StickyScroll = ({
     </motion.div>
   );
 };
-
-

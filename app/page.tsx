@@ -9,9 +9,8 @@ export default function Page() {
       <LandingPage
       finalContent={<Hero/>}
       />
-      <StickyScrollSections />
       <ImageCursorTrailSection />
-      
-    </>
+      <StickyScrollSections />
+    </> 
   );
 }
