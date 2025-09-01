@@ -148,10 +148,10 @@ const StickyScrollSections = () => {
       content: (
         <div className="flex w-60 h-60 items-center justify-center bg-black">
           <img
-            src="/redux.png"
+            src="/StickyScroll/redux.jpg"
             width={300}
             height={300}
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-50 lg:h-50 object-cover transition-transform duration-300 hover:scale-110"
+            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-40 lg:h-40 object-cover transition-transform duration-300 hover:scale-110"
             alt="Redux Logo"
           />
         </div>
@@ -167,7 +167,7 @@ const StickyScrollSections = () => {
             src="/StickyScroll/zustand2.webp"
             width={300}
             height={300}
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-50 lg:h-50 object-cover transition-transform duration-300 hover:scale-110"
+            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-40 lg:h-40 object-cover transition-transform duration-300 hover:scale-110"
             alt="Zustand logo"
           />
         </div>
@@ -183,7 +183,7 @@ const StickyScrollSections = () => {
             src="/StickyScroll/reactQuery.webp"
             width={300}
             height={300}
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-50 lg:h-50 mb-8 object-contain transition-transform duration-300 hover:scale-110"
+            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-40 lg:h-40 object-contain transition-transform duration-300 hover:scale-110"
             alt="React Query logo"
           />
         </div>
@@ -216,7 +216,7 @@ const StickyScrollSections = () => {
         content: (
           <div className="flex w-60 h-60 items-center justify-center bg-black">
             <img
-              src="/StickyScroll/Supabase2.png"
+              src="/StickyScroll/supabase2.png"
               width={300}
               height={300}
               className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-30 lg:h-30 object-contain transition-transform duration-300 hover:scale-110"
