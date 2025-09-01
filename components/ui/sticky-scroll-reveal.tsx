@@ -85,14 +85,35 @@ export const StickyScroll = ({
       </div>
 
       {/* Sticky Image/Content Section */}
-      <div
+      {/* <div
         className={cn(
           "flex items-center justify-center hidden lg:block sticky top-1/2 -translate-y-1/2 h-[22vh] w-[250px] overflow-hidden rounded-md mt-8 lg:mt-0",
           contentClassName,
         )}
       >
         {content[activeCard].content ?? null}
-      </div>
+      </div> */}
+      <div
+  className={cn(
+    "flex items-center justify-center hidden lg:block sticky top-1/2 -translate-y-1/2 h-[22vh] w-[250px] overflow-hidden rounded-md mt-8 lg:mt-0",
+    contentClassName,
+  )}
+>
+  {content.map((item, index) => (
+    <motion.div
+      key={item.title + index}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{
+        opacity: activeCard === index ? 1 : 0,
+        scale: activeCard === index ? 1 : 0.95,
+      }}
+      transition={{ duration: 0.4 }}
+      className="absolute inset-0 flex items-center justify-center"
+    >
+      {item.content ?? null}
+    </motion.div>
+  ))}
+</div>
     </motion.div>
   );
 };
