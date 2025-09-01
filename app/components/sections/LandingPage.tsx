@@ -95,7 +95,8 @@ const LandingPage = ({
           )}
         </div>
       </div>
-
+      
+      {/* To handle the Lottie animation size on Different screen sizes */}
       <style jsx>{`
         @keyframes text-cycle {
           0% {
