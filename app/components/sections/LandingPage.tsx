@@ -130,8 +130,8 @@ const LandingPage = ({
         }
 
         .lottie-animation {
-          width: 200px;
-          height: 200px;
+          width: 400px;
+          height: 400px;
         }
 
         /* Tablet screens and up */

@@ -312,7 +312,7 @@ const StickyScrollSections = () => {
             <div className='pb-35 lg:pb-60 xl:pb-60'></div>
 
             <h1 className="text-center text-4xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-semibold mb-6 sm:mb-8 md:mb-10 px-4 sm:px-6 lg:px-10 text-gray-300 pb-20">
-              State Management & Testing
+              State Management 
             </h1>
             <StickyScroll content={content3}/>
             <div className='pb-35 lg:pb-60 xl:pb-60'></div>
