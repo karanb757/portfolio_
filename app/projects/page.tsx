@@ -2,10 +2,12 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Content from "./Content";
+import Image from "next/image";
 
 export default function ThreeDCardDemo() {
   return (
     <>
+      <div className="hidden sm:block">
       <div className="px-4 sm:px-6 md:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold pt-20 sm:pt-24 md:pt-28 lg:pt-32 mb-8">
           PROJECTS
@@ -32,7 +34,7 @@ export default function ThreeDCardDemo() {
               </CardItem>
 
               <CardItem translateZ="100" className="w-full mt-4">
-                <img
+                <Image
                   src="/project/ai-lmss.png"
                   height="1000"
                   width="1000"
@@ -71,7 +73,7 @@ export default function ThreeDCardDemo() {
                 Finding PGs at one click 
               </CardItem>
               <CardItem translateZ="100" className="mt-4">
-                <img
+                <Image
                   src="/project/findmypg.png"
                   height="1000"
                   width="1000"
@@ -110,7 +112,7 @@ export default function ThreeDCardDemo() {
               </CardItem>
               
               <CardItem translateZ="100" className="w-full mt-4">
-                <img
+                <Image
                   src="/project/skiperr.png"
                   height="1000"
                   width="1000"
@@ -134,6 +136,7 @@ export default function ThreeDCardDemo() {
 
           
         </div>
+      </div>
       </div>
 
       <Content />

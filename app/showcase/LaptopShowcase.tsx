@@ -23,7 +23,7 @@ const LaptopShowcase = () => {
       <div className="grid grid-cols-5 grid-rows-5 gap-4 mt-12  pl-2 pr-2">
 
         <div className="row-span-4 card h-[698px] rounded-3xl w-full cursor-pointer focus:z-[99px] flex flex-col gap-20 bg-[#161616] text-white">
-          <Image src="/card1.webp" alt="photo b/w" width={500} height={500} />
+          <Image src="/Picc.jpeg" alt="photo b/w" width={500} height={500} className="rounded-3xl"/>
           <div className="text-xs text-center">
             <p className="text-center pt-8 text-white ">
             Development is where curiosity meets execution. For me it&apos;s a journey of constant learning and innovation. Every challenge in every project is an opportunity to build smarter solutions and create applications that truly make an impact.
@@ -68,9 +68,7 @@ const LaptopShowcase = () => {
 
         <div className="row-span-2 col-start-4 row-start-3  bg-[#161616] border-1 border-[#262626] text-[#D9D9D9] rounded-3xl flex items-center justify-center">
           <span className="text-6xl font-black pb-3 pr-1">
-            <FlipLink href='#'>
               {dateTime.toLocaleTimeString()}
-            </FlipLink>
           </span>
         </div>
 

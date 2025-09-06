@@ -6,6 +6,7 @@ import VortexSection from '../components/sections/VortexSection'
 
 const Content = () => {
   return (
+    <>
     <div className="px-4 sm:px-6 md:px-8 h-auto">
       
       {/* Project 1 - AI-LMS */}
@@ -239,9 +240,128 @@ const Content = () => {
           </div>
         </div>
       </div>
+
+      <div className="bg-black text-white flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <div className="py-40 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center"> 
+        
+      {/* Right Content */} 
+      <div className="space-y-6 sm:space-y-8 order-2"> 
       
-      <VortexSection />
+      {/* Header */} 
+      <div className="space-y-4"> 
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"> 
+          EXPERIENCE 
+        </h1> 
+        <p className="text-gray-400 text-sm sm:text-base md:text-lg uppercase tracking-wider"> 
+        My Professional Journey </p> 
+      </div> 
+      
+      {/* Internship Experience */}
+      <div className="space-y-4"> 
+        <div className="flex items-center gap-3"> 
+        <div> 
+          <h2 className="text-xl sm:text-2xl font-semibold">
+            Frontend Engineer Intern
+          </h2> 
+          <p className="text-gray-400 text-sm sm:text-base"> 
+            RotenX · Jan 2025 – Jun 2025 · 6 mos · Remote 
+          </p> 
+          </div> 
+        </div> 
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed"> 
+        Collaborated on scalable and user-friendly web applications using React.js, Next.js, and modern JavaScript. Focused on performance optimization, accessibility, and delivering responsive UIs with smooth animations.
+        </p> 
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+         Built an AI-powered browser, Resworb Browser, using Electron.js and React.js, achieving a 30% faster startup time and 25% lower memory usage. Additionally, developed Kaiga, an e-commerce frontend for photo framing with dynamic previews and a streamlined checkout flow, which improved user conversions by 20%. 
+         </p> 
+         </div> 
+
+         </div>
+         </div>
+         </div>
+
+      {/* EDUCATION Section */}
+      <div className="bg-black text-white flex items-center justify-center p-4 sm:p-6 md:p-8 mt-12 ">
+      <div className="py-40 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+
+        {/* Right Content */}
+        <div className="space-y-6 sm:space-y-8 order-2 ">
+          {/* Header */}
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          EDUCATION
+        </h1>
+        <p className="text-gray-400 text-sm sm:text-base md:text-lg uppercase tracking-wider">
+          Academic Journey
+        </p>
+      </div>
+
+      {/* BTech Details */}
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold">B.Tech in Information Technology</h2>
+            <p className="text-gray-400 text-sm sm:text-base">
+              ITM, Gwalior · 2021 – 2025
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+          Learned core computer science concepts, web development, software engineering, 
+          database management, and cloud technologies. Built projects using modern web stacks 
+          and focused on practical applications of IT in real-world scenarios.
+        </p>
+      </div>
+
+      {/* School Details */}
+      <div className="space-y-4 pt-6">
+        <div className="flex items-center gap-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold">12th</h2>
+            <p className="text-gray-400 text-sm sm:text-base">
+              United Children Hr. Secondary School · 2021
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+        Studied Physics, Chemistry, Mathematics, and Computer Science, focusing on 
+        foundational concepts, problem-solving skills, and practical applications. 
+        Gained strong analytical and logical thinking abilities through projects and experiments.
+        </p>
+      </div>
+
     </div>
+  </div>
+</div>
+
+      <div className="block lg:hidden pb-20">
+      <div className="flex flex-col items-center justify-center p-4">
+        <img 
+          src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z2kwYTQ2MnZvem11YzVtMnMzaDg4cGtvMG5vY2VpdmxwbWUydTExaiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/lV9cGLzPFxtF4r18rN/giphy.gif" 
+          alt="" 
+          className="h-40 w-40"
+        />
+        <button className="mt-4 border-1 p-4 text-sm">Download Resume</button>
+      </div>
+      </div>
+
+      <div className='block lg:hidden'>
+      <div className=' pb-15 flex flex-col items-center'>
+          <p className="">
+          Thanks For the visit 
+          </p> 
+          <p>crafted & designed by - karan757 ❤️</p>
+      </div>
+      </div>
+         
+
+
+    </div>
+
+    <VortexSection />
+    </>
   )
 }
 

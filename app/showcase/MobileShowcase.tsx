@@ -22,11 +22,11 @@ const MobileShowcase = () => {
         {/* Left Big Card */}
         <div className="row-span-1 sm:row-span-2 lg:row-span-4 card h-auto lg:h-[698px] rounded-3xl w-full cursor-pointer flex flex-col gap-6 sm:gap-10 lg:gap-20  text-white p-4 mt-5">
           <Image
-            src="/card1.webp"
+            src="/Picc.jpeg"
             alt="photo b/w"
-            width={500}
-            height={500}
-            className="rounded-2xl"
+            width={400}
+            height={400}
+            className="rounded-3xl"
           />
           <p className="text-xs sm:text-sm text-center pt-4 sm:pt-6 lg:pt-8">
             Development is where curiosity meets execution. For me it&apos;s a

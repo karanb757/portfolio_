@@ -4,13 +4,13 @@ import React from 'react'
 
 const HomePage2 = () => {
   return (
-    <div className='hidden sm:block h-[50vh] sm:h-[55vh] md:h-[60vh] bg-black mt-16 sm:mt-20 md:mt-24 lg:mt-86'>
+    <div className='hidden sm:block h-[50vh] sm:h-[55vh] md:h-[60vh] bg-black mt-16 sm:mt-20 md:mt-24 '>
         <div>
             <Vortex
                 backgroundColor="black"
                 className="flex items-center flex-col justify-center px-2 sm:px-4 md:px-6 lg:px-10 py-4 w-full h-full"
             > 
-            <div className='pt-90'>
+            <div className='mt-95'>
               <p className='text-sm pl-3'>Hey there !{" "}
               <span className='cursor-pointer text-amber-300 hover:text-amber-600' onClick={() => window.open("/KaranResume.pdf")}>click Here</span>{" "}
               to Download Resume
