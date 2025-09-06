@@ -24,9 +24,7 @@ const HomePage2 = () => {
               <p>crafted & designed by - karan757 ❤️</p>
             </div>
             
-
             </Vortex>
-
         </div>
     </div>
   )

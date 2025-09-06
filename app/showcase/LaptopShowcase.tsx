@@ -67,7 +67,7 @@ const LaptopShowcase = () => {
         </div>
 
         <div className="row-span-2 col-start-4 row-start-3  bg-[#161616] border-1 border-[#262626] text-[#D9D9D9] rounded-3xl flex items-center justify-center">
-          <span className="text-6xl font-black pb-3 pr-1">
+          <span className="text-5xl lg:text-6xl font-black ">
               {dateTime.toLocaleTimeString()}
           </span>
         </div>
@@ -91,7 +91,7 @@ const LaptopShowcase = () => {
         <div className="row-span-4 col-start-5 row-start-1 border-1 border-[#262626] bg-[#161616] rounded-3xl">
           <div className="grid grid-cols-3 grid-rows-2 gap-2 h-44">
             <div>
-              <h2 className="m-0 font-spaceGrotesk text-[50px] text-[#D9D9D9] font-bold leading-10 ">
+              <h2 className="m-0 font-spaceGrotesk text-[45px] text-[#D9D9D9] font-bold leading-10 ">
                 LIN <br />
                 KS
               </h2>
@@ -104,13 +104,13 @@ const LaptopShowcase = () => {
           </div>
 
           <div className=" h-[520px] p-3 mt-2 rounded-3xl  border-[#262626] flex flex-col">
-            <div className="flex flex-col ">
-              <h1 className="text-6xl font-bold">
-                <FlipLink href='#'>RECENT</FlipLink>
-              </h1>
-              <h1 className="text-6xl font-bold">
-              <FlipLink href='#'>WORKS</FlipLink>
-              </h1>
+            <div className="flex flex-col">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold">
+            RECENT
+            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold">
+              WORKS
+            </h1>
             </div>
 
             <div className="flex flex-col gap-3 pt-10">
