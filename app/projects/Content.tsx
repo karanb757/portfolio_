@@ -338,7 +338,7 @@ const Content = () => {
 
       <div className="block lg:hidden pb-20">
       <div className="flex flex-col items-center justify-center p-4">
-        <img 
+        <Image
           src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z2kwYTQ2MnZvem11YzVtMnMzaDg4cGtvMG5vY2VpdmxwbWUydTExaiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/lV9cGLzPFxtF4r18rN/giphy.gif" 
           alt="" 
           className="h-40 w-40"
