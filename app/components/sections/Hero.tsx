@@ -8,7 +8,7 @@ const Hero = () => {
         <BackgroundLines className="bg-black flex items-center justify-center w-full flex-col px-4 min-h-screen">
           <div className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 pb-10">
             <h2 className="bg-clip-text text-white text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-              Code by Logic Design by Passion <br />
+             Hey I&apos;m Karan <br />
               <span className="text-xl sm:text-3xl md:text-4xl lg:text-6xl bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
                 Breathing Life into Lines of Code
               </span>
