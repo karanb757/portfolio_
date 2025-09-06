@@ -135,7 +135,7 @@ const LandingPage = ({
         }
 
         /* Tablet screens and up */
-        @media (min-width: 700px) {
+        @media (min-width: 600px) {
           .lottie-animation {
             width: 700px;
             height: 700px;
@@ -145,8 +145,8 @@ const LandingPage = ({
         /* Large screens */
         @media (min-width: 1024px) {
           .lottie-animation {
-            width: 900px;
-            height: 900px;
+            width: 1100px;
+            height: 1100px;
           }
         }
       `}</style>
