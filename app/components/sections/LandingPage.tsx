@@ -25,7 +25,7 @@ const LandingPage = ({
   // Detect screen size
   useEffect(() => {
     const updateScreenSize = () => {
-      if (window.innerWidth >= 700) {
+      if (window.innerWidth >= 768) {
         setScreenSize('large');
       } else if (window.innerWidth >= 600) {
         setScreenSize('medium');
@@ -36,6 +36,7 @@ const LandingPage = ({
 
     // Set initial screen size
     updateScreenSize();
+    console.log('Screen size:', screenSize, 'Window width:', window.innerWidth);
 
     // Add event listener for window resize
     window.addEventListener('resize', updateScreenSize);
@@ -43,6 +44,7 @@ const LandingPage = ({
     // Cleanup
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
+  
 
   useEffect(() => {
     if (currentIndex === -1) {
