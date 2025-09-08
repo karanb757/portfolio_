@@ -20,6 +20,40 @@ const LandingPage = ({
   const [isAnimating, setIsAnimating] = useState(true);
   const [showFinalContent, setShowFinalContent] = useState(false);
   const [showLottie, setShowLottie] = useState(false);
+  const [lottieSize, setLottieSize] = useState({ width: 400, height: 400 });
+
+  // Force lottie size based on window width
+  useEffect(() => {
+    const updateLottieSize = () => {
+      const width = window.innerWidth;
+      console.log('Window width:', width);
+      
+      if (width >= 1200) {
+        setLottieSize({ width: 1400, height: 1400 });
+        console.log('Set size: 1400px');
+      } else if (width >= 900) {
+        setLottieSize({ width: 1200, height: 1200 });
+        console.log('Set size: 1200px');
+      } else if (width >= 600) {
+        setLottieSize({ width: 800, height: 800 });
+        console.log('Set size: 800px');
+      } else {
+        setLottieSize({ width: 400, height: 400 });
+        console.log('Set size: 400px');
+      }
+    };
+
+    // Set size immediately
+    updateLottieSize();
+    
+    // Add resize listener
+    window.addEventListener('resize', updateLottieSize);
+    
+    // Force update after a short delay to ensure DOM is ready
+    setTimeout(updateLottieSize, 100);
+    
+    return () => window.removeEventListener('resize', updateLottieSize);
+  }, []);
 
   useEffect(() => {
     if (currentIndex === -1) {
@@ -82,13 +116,21 @@ const LandingPage = ({
             </div>
           )}
 
-          {/* Show lottie animation with consistent sizing */}
+          {/* Show lottie animation with forced inline sizing */}
           {showLottie && (
             <div className="lottie-container">
               <DotLottieReact 
                 src="/Welcome.lottie" 
                 loop 
                 autoplay
+                style={{
+                  width: `${lottieSize.width}px`,
+                  height: `${lottieSize.height}px`,
+                  minWidth: `${lottieSize.width}px`,
+                  minHeight: `${lottieSize.height}px`,
+                  maxWidth: `${lottieSize.width}px`,
+                  maxHeight: `${lottieSize.height}px`
+                }}
                 className="lottie-animation"
               />
             </div>
@@ -96,7 +138,7 @@ const LandingPage = ({
         </div>
       </div>
       
-      {/* Enhanced styles for better deployment compatibility */}
+      {/* Simplified styles */}
       <style jsx>{`
         @keyframes text-cycle {
           0% {
@@ -127,45 +169,12 @@ const LandingPage = ({
           align-items: center;
           width: 100%;
           height: 100%;
+          overflow: visible;
         }
 
         .lottie-animation {
-          width: 400px !important;
-          height: 400px !important;
-          max-width: none !important;
-          max-height: none !important;
-        }
-
-        /* Mobile screens */
-        @media screen and (max-width: 599px) {
-          .lottie-animation {
-            width: 400px !important;
-            height: 400px !important;
-          }
-        }
-
-        /* Tablet screens */
-        @media screen and (min-width: 600px) and (max-width: 899px) {
-          .lottie-animation {
-            width: 800px !important;
-            height: 800px !important;
-          }
-        }
-
-        /* Large screens (laptops and desktop) */
-        @media screen and (min-width: 900px) {
-          .lottie-animation {
-            width: 1200px !important;
-            height: 1200px !important;
-          }
-        }
-
-        /* Extra large screens */
-        @media screen and (min-width: 1200px) {
-          .lottie-animation {
-            width: 1400px !important;
-            height: 1400px !important;
-          }
+          flex-shrink: 0;
+          display: block;
         }
       `}</style>
     </div>
