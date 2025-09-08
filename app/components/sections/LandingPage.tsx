@@ -20,23 +20,26 @@ const LandingPage = ({
   const [isAnimating, setIsAnimating] = useState(true);
   const [showFinalContent, setShowFinalContent] = useState(false);
   const [showLottie, setShowLottie] = useState(false);
-  const [screenSize, setScreenSize] = useState('small'); // Add screen size state
+  const [screenSize, setScreenSize] = useState('small');
 
   // Detect screen size
   useEffect(() => {
     const updateScreenSize = () => {
+      let newScreenSize;
       if (window.innerWidth >= 768) {
-        setScreenSize('large');
+        newScreenSize = 'large';
       } else if (window.innerWidth >= 600) {
-        setScreenSize('medium');
+        newScreenSize = 'medium';
       } else {
-        setScreenSize('small');
+        newScreenSize = 'small';
       }
+      
+      setScreenSize(newScreenSize);
+      console.log('Screen size:', newScreenSize, 'Window width:', window.innerWidth);
     };
 
     // Set initial screen size
     updateScreenSize();
-    console.log('Screen size:', screenSize, 'Window width:', window.innerWidth);
 
     // Add event listener for window resize
     window.addEventListener('resize', updateScreenSize);
@@ -44,7 +47,6 @@ const LandingPage = ({
     // Cleanup
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
-  
 
   useEffect(() => {
     if (currentIndex === -1) {
@@ -82,7 +84,7 @@ const LandingPage = ({
   const getLottieSize = () => {
     switch (screenSize) {
       case 'large':
-        return { width: '1000px', height: '1000px' };
+        return { width: '1400px', height: '1400px' };
       case 'medium':
         return { width: '800px', height: '800px' };
       default:
@@ -109,7 +111,7 @@ const LandingPage = ({
             isAnimating ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Show greeting if lottie not playing - UPDATED TEXT SIZES */}
+          {/* Show greeting if lottie not playing */}
           {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
