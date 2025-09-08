@@ -20,33 +20,6 @@ const LandingPage = ({
   const [isAnimating, setIsAnimating] = useState(true);
   const [showFinalContent, setShowFinalContent] = useState(false);
   const [showLottie, setShowLottie] = useState(false);
-  const [screenSize, setScreenSize] = useState('small');
-
-  // Detect screen size
-  useEffect(() => {
-    const updateScreenSize = () => {
-      let newScreenSize;
-      if (window.innerWidth >= 768) {
-        newScreenSize = 'large';
-      } else if (window.innerWidth >= 600) {
-        newScreenSize = 'medium';
-      } else {
-        newScreenSize = 'small';
-      }
-      
-      setScreenSize(newScreenSize);
-      console.log('Screen size:', newScreenSize, 'Window width:', window.innerWidth);
-    };
-
-    // Set initial screen size
-    updateScreenSize();
-
-    // Add event listener for window resize
-    window.addEventListener('resize', updateScreenSize);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', updateScreenSize);
-  }, []);
 
   useEffect(() => {
     if (currentIndex === -1) {
@@ -80,18 +53,6 @@ const LandingPage = ({
     }
   }, [currentIndex, greetings.length, intervalDuration]);
 
-  // Get Lottie size based on screen size
-  const getLottieSize = () => {
-    switch (screenSize) {
-      case 'large':
-        return { width: '1400px', height: '1400px' };
-      case 'medium':
-        return { width: '800px', height: '800px' };
-      default:
-        return { width: '400px', height: '400px' };
-    }
-  };
-
   return (
     <div className={`relative`}>
       <div>{finalContent}</div>
@@ -115,7 +76,7 @@ const LandingPage = ({
           {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-light animate-text-cycle text-white"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-light animate-text-cycle text-white"
             >
               {greetings[currentIndex]}
             </div>
@@ -128,7 +89,6 @@ const LandingPage = ({
                 src="/Welcome.lottie" 
                 loop 
                 autoplay
-                style={getLottieSize()}
                 className="lottie-animation"
               />
             </div>
@@ -136,7 +96,7 @@ const LandingPage = ({
         </div>
       </div>
       
-      {/* Updated styles without media queries for lottie sizing */}
+      {/* To handle the Lottie animation size on Different screen sizes */}
       <style jsx>{`
         @keyframes text-cycle {
           0% {
@@ -153,7 +113,7 @@ const LandingPage = ({
           }
           100% {
             opacity: 0;
-            transform: scale(1.4);
+            transform: scale(1.2);
           }
         }
 
@@ -170,7 +130,24 @@ const LandingPage = ({
         }
 
         .lottie-animation {
-          /* Size is now controlled by inline styles */
+          width: 400px;
+          height: 400px;
+        }
+
+        /* Tablet screens and up */
+        @media (min-width: 600px) {
+          .lottie-animation {
+            width: 800px;
+            height: 800px;
+          }
+        }
+
+        /* Large screens */
+        @media (min-width: 900px) {
+          .lottie-animation {
+            width: 1100px;
+            height: 1100px;
+          }
         }
       `}</style>
     </div>
