@@ -76,7 +76,7 @@ const LandingPage = ({
           {currentIndex >= 0 && currentIndex < greetings.length && !showLottie && (
             <div
               key={currentIndex}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-light animate-text-cycle text-white"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-light animate-text-cycle text-white"
             >
               {greetings[currentIndex]}
             </div>
@@ -96,7 +96,7 @@ const LandingPage = ({
         </div>
       </div>
       
-      {/* To handle the Lottie animation size on Different screen sizes */}
+      {/* Enhanced styles for better deployment compatibility */}
       <style jsx>{`
         @keyframes text-cycle {
           0% {
@@ -130,23 +130,41 @@ const LandingPage = ({
         }
 
         .lottie-animation {
-          width: 400px;
-          height: 400px;
+          width: 400px !important;
+          height: 400px !important;
+          max-width: none !important;
+          max-height: none !important;
         }
 
-        /* Tablet screens and up */
-        @media (min-width: 600px) {
+        /* Mobile screens */
+        @media screen and (max-width: 599px) {
           .lottie-animation {
-            width: 800px;
-            height: 800px;
+            width: 400px !important;
+            height: 400px !important;
           }
         }
 
-        /* Large screens */
-        @media (min-width: 900px) {
+        /* Tablet screens */
+        @media screen and (min-width: 600px) and (max-width: 899px) {
           .lottie-animation {
-            width: 1100px;
-            height: 1100px;
+            width: 800px !important;
+            height: 800px !important;
+          }
+        }
+
+        /* Large screens (laptops and desktop) */
+        @media screen and (min-width: 900px) {
+          .lottie-animation {
+            width: 1200px !important;
+            height: 1200px !important;
+          }
+        }
+
+        /* Extra large screens */
+        @media screen and (min-width: 1200px) {
+          .lottie-animation {
+            width: 1400px !important;
+            height: 1400px !important;
           }
         }
       `}</style>
