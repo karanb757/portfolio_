@@ -25,7 +25,7 @@ const LandingPage = ({
   // Detect screen size
   useEffect(() => {
     const updateScreenSize = () => {
-      if (window.innerWidth >= 900) {
+      if (window.innerWidth >= 700) {
         setScreenSize('large');
       } else if (window.innerWidth >= 600) {
         setScreenSize('medium');
@@ -80,7 +80,7 @@ const LandingPage = ({
   const getLottieSize = () => {
     switch (screenSize) {
       case 'large':
-        return { width: '1100px', height: '1100px' };
+        return { width: '1000px', height: '1000px' };
       case 'medium':
         return { width: '800px', height: '800px' };
       default:
@@ -149,7 +149,7 @@ const LandingPage = ({
           }
           100% {
             opacity: 0;
-            transform: scale(1.2);
+            transform: scale(1.4);
           }
         }
 
