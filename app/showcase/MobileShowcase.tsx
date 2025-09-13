@@ -142,8 +142,8 @@ const MobileShowcase = () => {
               {[
                 { title: "AI-LMS", date: "AUG-25", link: "https://ai-lms-v3.vercel.app/" },
                 { title: "Skiper-UI", date: "JULY-25", link: "skiper-UI.vercel.app" },
-                { title: "Portfolio", date: "JAN-25", link: "kabir757.vercel.app" },
-                { title: "FindMyPG", date: "JAN-25", link: "FindMyPG.vercel.app" },
+                { title: "Portfolio", date: "JAN-25", link: "https://karan757.vercel.app/" },
+                { title: "FindMyPG", date: "JAN-25", link: "fmp-lemon.vercel.app/" },
               ].map((work, i) => (
                 <div key={i} className="flex flex-col">
                   <div className="flex justify-between">
