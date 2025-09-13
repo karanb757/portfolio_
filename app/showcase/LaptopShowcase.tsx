@@ -151,7 +151,7 @@ const LaptopShowcase = () => {
                     <span className="text-xs text-[#8A8A8A]">JAN-25</span>
                 </div>
                 <div>
-                  <a className='text-sm text-[#8A8A8A]' href="#">FindMyPG.vercel.app</a>
+                  <a className='text-sm text-[#8A8A8A]' href="https://fmp-lemon.vercel.app/">fmp-lemon.vercel.app/</a>
                 </div>
               </div>
 
