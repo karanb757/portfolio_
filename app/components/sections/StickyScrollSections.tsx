@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 const StickyScrollSections = () => {
 
-  //Programming Languages -> 
     const content1 = [
       {
         title: "C",
@@ -225,6 +224,22 @@ const StickyScrollSections = () => {
           </div>
         ),
       },
+    {
+      title: "SQL",
+      description:
+        "SQL is a powerful relational database system used for managing structured data with strong consistency and reliability. I use SQL databases like MySQL and PostgreSQL to design normalized schemas, write optimized queries, handle complex joins, and ensure data integrity using constraints and transactions. It is ideal for applications requiring accurate reporting, relationships, and ACID compliance.",
+      content: (
+        <div className="flex w-60 h-60 items-center justify-center bg-black">
+          <img
+            src="/StickyScroll/sql.png"
+            width={300}
+            height={300}
+            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-30 lg:h-30 object-contain transition-transform duration-300 hover:scale-110"
+            alt="SQL Database"
+          />
+        </div>
+      ),
+    },
   ]
 
   //backend & apis -> 

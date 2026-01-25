@@ -62,6 +62,8 @@ const LaptopShowcase = () => {
               <li>REDUX TOOLKIT</li>
               <li>NODE.JS EXPRESS.JS</li>
               <li>RESTful APIs</li>
+              <li>CSR SSR SSG ISR</li>
+              <li>Optimisation Techniques</li>
             </ul>
           </div>
         </div>
