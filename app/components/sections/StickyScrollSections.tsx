@@ -156,22 +156,22 @@ const StickyScrollSections = () => {
         </div>
       ),
     },
-    {
-      title: "Zustand",
-      description:
-        "Zustand is a small, fast, and scalable state management solution with a simple API based on hooks. It provides a minimalistic approach to state management without the boilerplate of Redux while offering similar capabilities. Zustand features a simple hook-based API, minimal boilerplate, built-in middleware support, excellent TypeScript integration, and the ability to manage state without wrapping components in providers, making it ideal for small to medium applications with straightforward state needs.",
-      content: (
-        <div className="flex w-60 h-60 items-center justify-center bg-black">
-          <img
-            src="/StickyScroll/zustand2.webp"
-            width={300}
-            height={300}
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-49 lg:h-40 object-cover transition-transform duration-300 hover:scale-110"
-            alt="Zustand logo"
-          />
-        </div>
-      ),
-    },
+    // {
+    //   title: "Zustand",
+    //   description:
+    //     "Zustand is a small, fast, and scalable state management solution with a simple API based on hooks. It provides a minimalistic approach to state management without the boilerplate of Redux while offering similar capabilities. Zustand features a simple hook-based API, minimal boilerplate, built-in middleware support, excellent TypeScript integration, and the ability to manage state without wrapping components in providers, making it ideal for small to medium applications with straightforward state needs.",
+    //   content: (
+    //     <div className="flex w-60 h-60 items-center justify-center bg-black">
+    //       <img
+    //         src="/StickyScroll/zustand2.webp"
+    //         width={300}
+    //         height={300}
+    //         className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-49 lg:h-40 object-cover transition-transform duration-300 hover:scale-110"
+    //         alt="Zustand logo"
+    //       />
+    //     </div>
+    //   ),
+    // },
     {
       title: "React Query",
       description:
@@ -292,23 +292,6 @@ const StickyScrollSections = () => {
         </div>
       ),
     },
-    {
-      title: "GraphQL",
-      description:
-        "GraphQL is a query language for APIs and a runtime for executing those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need, and makes it easier to evolve APIs over time. GraphQL enables efficient data fetching with single endpoints, reduces over-fetching and under-fetching of data, and provides strong typing and introspection capabilities for better developer experience.",
-      content: (
-        <div className="flex w-60 h-60 items-center justify-center bg-black">
-          <img
-            src="/StickyScroll/graphQL.jpeg"
-            width={300}
-            height={300}
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-50 lg:h-50 object-contain transition-transform duration-300 hover:scale-110"
-            alt="GraphQL logo"
-          />
-        </div>
-      ),
-    },
-
   ]
   
   return (

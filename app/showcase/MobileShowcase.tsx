@@ -55,13 +55,9 @@ const MobileShowcase = () => {
             </span>
           </h2>
           <p className="text-xs sm:text-sm md:text-base mt-4">
-            My journey in the world of web development stems from a deep
-            fascination with the digital realm. From my early days of curiosity
-            to my current expertise, I have honed the craft of turning ideas
-            into engaging, functional, and user-friendly web experiences. I
-            specialize in building seamless and visually appealing web
-            applications that balance design with performance. So let&apos;s
-            create something impactful and innovative together.
+             =Full-stack engineer with 1+ years of experience building high-performance web applications. I specialize in optimizing Core Web Vitals, designing scalable e-commerce platforms, and integrating secure payment workflows. 
+            Passionate about transforming complex technical challenges into seamless user experiences through modern frontend and backend technologies. 
+            Let&apos;s build something impactful together.
           </p>
         </div>
 
